@@ -1,0 +1,36 @@
+.currency-card {
+  position: relative;
+  left: 50%;
+  transform: translateX(-25%);
+  min-width: 300px;
+  max-width: 400px; /* more substantial */
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* smaller gap */
+  text-align: center;
+}
+
+.currency-heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px; /* reduce space */
+  text-align: left;
+  width: 100%;
+}
+
+/* Input & results remain same */
+.currency-input { display: flex; justify-content: space-between; align-items: center; }
+.currency-input input { width: 60%; padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; }
+.currency-arrow { display: flex; justify-content: center; margin: 10px 0; }
+.currency-result { display: flex; justify-content: space-between; font-weight: 500; }
+.convert-btn { padding: 10px 15px; border-radius: 8px; border: none; background-color: #4f46e5; color: white; cursor: pointer; }
+.convert-btn:disabled { background-color: #a5b4fc; cursor: not-allowed; }
+.error-msg { color: red; font-size: 14px; }
+
+/* Responsive */
+@media (max-width: 1024px) { .currency-card { transform: translateX(-50%); } }
+@media (max-width: 600px) { .currency-card { max-width: 90%; padding: 20px; } }

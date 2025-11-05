@@ -1,0 +1,152 @@
+/* Reset & global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  font-family: Arial, sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.app {
+  background-color: #f9f9f9;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid #ccc;
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo .info {
+  color: blue;
+}
+
+.logo .hub {
+  color: #333;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/* Main sections */
+.main {
+  padding-top: 80px; /* space for fixed header */
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 80px;
+  border-bottom: 1px solid #ccc;
+  flex-direction: row; /* 70/30 layout */
+  position: relative;
+  box-sizing: border-box;
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: bold;
+  width: 70%;           /* heading 70% width */
+  text-align: left;
+}
+
+/* Section content - cards */
+.section-content {
+  width: 100%;            /* card 30% width */
+  display: flex;
+  justify-content: flex-end; /* align card to right */
+}
+
+/* Overlapping card style for all */
+.section-content > * {
+  position: relative;
+  left: 50%;
+  transform: translateX(-30%); /* partially outside/inside */
+  max-width: 750px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+/* Alternate section backgrounds */
+.weather-section { background-color: #f0f4f8; }
+.currency-section { background-color: #fff; }
+.quotes-section { background-color: #f0f4f8; }
+
+/* MEDIA QUERIES - responsiveness */
+@media (max-width: 1024px) {
+  .section {
+    flex-direction: column;
+    padding: 30px 40px;
+  }
+  .section-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .section-content {
+    width: 100%;
+    justify-content: center;
+  }
+  .section-content > * {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-content > * {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .section-heading {
+    font-size: 22px;
+  }
+}
