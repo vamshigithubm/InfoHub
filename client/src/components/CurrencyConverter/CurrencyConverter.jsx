@@ -18,7 +18,7 @@ const CurrencyConverter = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/currency?amount=${amount}`
+        `https://infohub-j3k8.onrender.com/api/currency?amount=${amount}`
       );
       setResult(res.data);
     } catch {
