@@ -7,7 +7,7 @@ function WeatherModule() {
 
   const fetchWeather = async () => {
     try {
-      const response = await axios.get('https://infohub-j3k8.onrender.com/api/weather');
+      const response = await axios.get('https://infohub-1-zgak.onrender.com/api/weather');
       setWeather(response.data);
     } catch (error) {
       console.log("Error fetching weather:", error);

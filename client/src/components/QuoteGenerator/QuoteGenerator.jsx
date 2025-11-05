@@ -8,7 +8,7 @@ const QuoteGenerator = () => {
   const fetchQuote = async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://infohub-j3k8.onrender.com/api/quotes");
+      const response = await fetch("https://infohub-1-zgak.onrender.com/api/quotes");
       const data = await response.json();
       setQuote(data);
     } catch (error) {
